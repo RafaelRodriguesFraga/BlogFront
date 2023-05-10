@@ -6,10 +6,12 @@ const Home = () => {
   return (
     <S.Container>
       <S.NewerPostContainer>
-        <S.NewerPostImage
+        <S.ImageContainer>
+          <S.NewerPostImage
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3iPk7K4pohAy6fc9b4XPjtlAiXSndPJ0liA&usqp=CAU"
           alt="Post Image"
         />
+        </S.ImageContainer>
 
         <S.NewerPostContent>
           <S.NewerPostInfo>
@@ -37,12 +39,12 @@ const Home = () => {
       </S.NewerPostContainer>
 
       <S.PostContainer>
-        <PostListItem/>
-        <PostListItem/>
-        <PostListItem/>
-        <PostListItem/>
-        <PostListItem/>
-        <PostListItem/>
+        <PostListItem />
+        <PostListItem />
+        <PostListItem />
+        <PostListItem />
+        <PostListItem />
+        <PostListItem />
       </S.PostContainer>
     </S.Container>
   );
