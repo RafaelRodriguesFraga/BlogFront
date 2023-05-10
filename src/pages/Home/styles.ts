@@ -1,39 +1,42 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-left: 16px;
-  margin-top: 16px;
+    margin-top: 5rem;
 `;
 
 export const NewerPostContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin-bottom: 2rem;
-  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
-
+  max-width: 1200px;  
+  
   @media (max-width: 975px) {
     display: flex;
     flex-direction: column;
   }
 `;
 
-export const NewerPostImage = styled.img`
-  widht: 710px;
-  height: 389px;
-  object-fit: cover;
+export const ImageContainer = styled.div`
+  max-width: 540px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #fff;
+ 
+`;
 
-  @media (max-width: 975px) {
-    widith: auto;
-    height: auto;
-  }
+export const NewerPostImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 `;
 
 export const NewerPostContent = styled.div`
   display: flex;
   flex-direction: column;
-  background: red;
 `;
 
 export const NewerPostInfo = styled.div`
