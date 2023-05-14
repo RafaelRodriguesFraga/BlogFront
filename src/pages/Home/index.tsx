@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./styles";
 import PostListItem from "../../components/PostListItem";
+import Pagination from "../../components/Pagination";
 
 const Home = () => {
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(10);
+
+    const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+    
   return (
     <S.Container>
       <S.NewerPostContainer>
         <S.ImageContainer>
           <S.NewerPostImage
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3iPk7K4pohAy6fc9b4XPjtlAiXSndPJ0liA&usqp=CAU"
-          alt="Post Image"
-        />
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3iPk7K4pohAy6fc9b4XPjtlAiXSndPJ0liA&usqp=CAU"
+            alt="Post Image"
+          />
         </S.ImageContainer>
 
         <S.NewerPostContent>
@@ -46,6 +55,12 @@ const Home = () => {
         <PostListItem />
         <PostListItem />
       </S.PostContainer>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
     </S.Container>
   );
 };
