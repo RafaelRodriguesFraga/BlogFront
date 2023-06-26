@@ -9,6 +9,8 @@ export const NavbarContainer = styled.nav`
   padding: 1rem;
   position: relative;
   z-index: 999;
+
+
 `;
 
 export const LogoLink = styled(Link)`
@@ -78,7 +80,7 @@ export const HamburgerButton = styled.button`
   cursor: pointer;
   display: none;
 
-  @media (max-width: 768px) {
+  @media (min-width: 250px) {
     display: block;
   }
 `;

@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const PostCard = styled.div`
-  display: flex;
-  flex-direction: column;
+
 `;
 
 export const PostImage = styled.img`
   width: 100%;
-  height: 213px;
   object-fit: cover;
 `;
 

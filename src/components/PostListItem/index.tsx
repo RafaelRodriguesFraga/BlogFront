@@ -11,7 +11,7 @@ const PostListItem = () => {
       </S.PostInfo>
       <S.PostTitle>Titulo do Post</S.PostTitle>
       <S.PostDescription>Descricao do Post</S.PostDescription>
-      <S.AuthorContainer>
+      {/* <S.AuthorContainer>
             <S.AuthorAvatar
               src="https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
               alt="Author Avatar"
@@ -21,7 +21,7 @@ const PostListItem = () => {
               <S.AuhtorName>John Doe</S.AuhtorName>
               <S.AuthorProfession>Software Developer</S.AuthorProfession>
             </S.AuthorContent>
-          </S.AuthorContainer>
+          </S.AuthorContainer> */}
     </S.PostCard>
   );
 };

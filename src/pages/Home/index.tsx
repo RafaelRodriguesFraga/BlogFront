@@ -33,7 +33,7 @@ const Home = () => {
           <S.NewerPostDescription>
             Pra criar classes ricas é necessario saber...
           </S.NewerPostDescription>
-          <S.AuthorContainer>
+          {/* <S.AuthorContainer>
             <S.AuthorAvatar
               src="https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
               alt="Author Avatar"
@@ -43,7 +43,7 @@ const Home = () => {
               <S.AuhtorName>John Doe</S.AuhtorName>
               <S.AuthorProfession>Software Developer</S.AuthorProfession>
             </S.AuthorContent>
-          </S.AuthorContainer>
+          </S.AuthorContainer> */}
         </S.NewerPostContent>
       </S.NewerPostContainer>
 
