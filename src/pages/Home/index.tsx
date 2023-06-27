@@ -8,10 +8,10 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(10);
 
-    const handlePageChange = (pageNumber: number) => {
+  const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
-    
+
   return (
     <S.Container>
       <S.NewerPostContainer>
@@ -32,18 +32,7 @@ const Home = () => {
           <S.NewerPostTitle>Como criar classes ricas com C#</S.NewerPostTitle>
           <S.NewerPostDescription>
             Pra criar classes ricas é necessario saber...
-          </S.NewerPostDescription>
-          {/* <S.AuthorContainer>
-            <S.AuthorAvatar
-              src="https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
-              alt="Author Avatar"
-            />
-
-            <S.AuthorContent>
-              <S.AuhtorName>John Doe</S.AuhtorName>
-              <S.AuthorProfession>Software Developer</S.AuthorProfession>
-            </S.AuthorContent>
-          </S.AuthorContainer> */}
+          </S.NewerPostDescription>      
         </S.NewerPostContent>
       </S.NewerPostContainer>
 
