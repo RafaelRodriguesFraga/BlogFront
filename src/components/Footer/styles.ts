@@ -26,9 +26,10 @@ export const SocialIconsContainer = styled.div`
 
 export const SocialIconLink = styled(Link)`
     color: #FFF;
+    transition: all 0.4s ease-in-out;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
-export const FacebookIcon = styled(FaFacebook)``;
-export const LinkedinIcon = styled(FaLinkedin)``;
-export const GithubIcon = styled(FaGithub)``;
-export const InstagramIcon = styled(FaInstagram)``;
