@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes as AppRoutes } from "react-router-dom";
 import Home from "../pages/Home";
-import Posts from "../pages/Posts";
+import Post from "../pages/Post";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -11,7 +11,7 @@ export const Routes = () => {
       <Navbar/>
         <AppRoutes>
              <Route path="/" element={<Home />} />
-             <Route path="/posts" element={<Posts />} />
+             <Route path="/post" element={<Post />} />
         </AppRoutes>
         <Footer/>     
     </Router>
