@@ -1,18 +1,32 @@
 import styled from "styled-components";
 
 export const PostCard = styled.div`
+  border: 1px solid;
+  background-color: #27374d;
+  border-radius: 10px;
 
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;
 
 export const PostImage = styled.img`
   width: 100%;
-  object-fit: cover;
+`;
+
+export const PostInfoContainer = styled.div`
+  margin-left: 1rem;
 `;
 
 export const PostInfo = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export const PostContent = styled.div``;
 
 export const PostTag = styled.span`
   font-size: 1.2rem;
@@ -37,44 +51,14 @@ export const PostDate = styled.span`
 `;
 
 export const PostTitle = styled.h2`
-  color: #FFF;
+  color: #fff;
   margin-top: 11px;
-
 `;
 
 export const PostDescription = styled.p`
   font-size: 1rem;
-  color: #FFF;
+  color: #fff;
   margin-top: 10px;
   margin-bottom: 1rem;
   opacity: 0.6;
 `;
-
-export const AuthorContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-`;
-
-export const AuthorAvatar = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 1rem;
-`;
-
-export const AuthorContent = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const AuhtorName = styled.span`
-  font-size: 0.875rem;
-`;
-
-export const AuthorProfession = styled.span`
-  font-size: 1rem;
-  color: #999;
-`;
-
-
