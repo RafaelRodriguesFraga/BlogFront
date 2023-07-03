@@ -1,6 +1,6 @@
 import React from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import "./styles.css";
+import * as S from "./styles";
 
 interface PaginationProps {
   currentPage: number;
@@ -22,22 +22,22 @@ const Pagination = ({
   };
 
   return (
-    <div className="pagination-container">
+    <S.PaginationContainer>
       {currentPage > 1 && (
-        <button className="pagination-button" onClick={handlePreviousClick}>
+        <S.PaginationButton onClick={handlePreviousClick}>
           <FaAngleLeft size={18} color="#e9e9ed" />
-        </button>
+        </S.PaginationButton>
       )}
       <span>
         Página {currentPage} de {totalPages}
       </span>
 
       {currentPage < totalPages && (
-        <button className="pagination-button" onClick={handleNextClick}>
+        <S.PaginationButton onClick={handleNextClick}>
           <FaAngleRight size={18} color="#e9e9ed" />
-        </button>
+        </S.PaginationButton>
       )}
-    </div>
+    </S.PaginationContainer>
   );
 };
 
