@@ -17,7 +17,7 @@ const Home = () => {
       <S.NewerPostContainer>
         <S.ImageContainer>
           <S.NewerPostImage
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3iPk7K4pohAy6fc9b4XPjtlAiXSndPJ0liA&usqp=CAU"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCNhaL-D3aveZLCYzmSqDqkgNb1NIj0IKyzQ&usqp=CAU"
             alt="Post Image"
           />
         </S.ImageContainer>

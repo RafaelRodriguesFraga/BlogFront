@@ -10,24 +10,45 @@ export const NewerPostContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  
-  @media (max-width: 300px) {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  border: 1px solid;
+  background-color: #27374d;
+  border-radius: 10px;
 
-    gap: 1rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  @media (max-width: 345px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 245px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 2rem;
   }
 `;
 
 export const ImageContainer = styled.div`
   width: 100%;
-  height: auto;
-  border: 1px solid #fff; 
+  height: 100%;
 `;
 
 export const NewerPostImage = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+
+  @media (max-width: 680px) {
+    border-top-right-radius: 10px;
+
+  }
 `;
 
 export const NewerPostContent = styled.div`
@@ -69,12 +90,6 @@ export const NewerPostTitle = styled.h2`
 export const NewerPostDescription = styled.p`
   font-size: 1.2rem;
   color: #999;
-`;
-
-export const AuthorContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 2rem;
 `;
 
 export const PostContainer = styled.div`
