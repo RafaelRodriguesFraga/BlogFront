@@ -29,8 +29,7 @@ const Navbar = () => {
         </S.NavbarItem>
         </S.NavbarList>
 
-        <S.SearchInput type="text" placeholder="Search"/>
-        <S.AvatarImage src="https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg" alt="Avatar" />     
+        {/* <S.SearchInput type="text" placeholder="Search"/> */}
 
     </S.NavbarContainer>
   );
