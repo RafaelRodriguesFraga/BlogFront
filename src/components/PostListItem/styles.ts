@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PostCard = styled.div`
   border: 1px solid;
   background-color: #27374d;
-  border-radius: 10px;
+  border-radius: 5px;
 
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -15,6 +15,7 @@ export const PostCard = styled.div`
 
 export const PostImage = styled.img`
   width: 100%;
+
 `;
 
 export const PostInfoContainer = styled.div`
