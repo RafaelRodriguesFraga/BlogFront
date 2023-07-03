@@ -6,28 +6,28 @@ export const Container = styled.div`
 
 export const NewerPostContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   border: 1px solid;
   background-color: #27374d;
   border-radius: 10px;
+  gap: 2rem;
 
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-
   &:hover {
     transform: translateY(-5px);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
-  @media (max-width: 345px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  @media (max-width: 636px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 2rem;
+    gap: 0;
   }
 
-  @media (max-width: 245px) {
+  @media (max-width: 345px) {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-top: 2rem;
   }
@@ -42,18 +42,19 @@ export const NewerPostImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
 
   @media (max-width: 680px) {
     border-top-right-radius: 10px;
-
   }
 `;
 
 export const NewerPostContent = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 16px;
 `;
 
 export const NewerPostInfo = styled.div`
@@ -85,6 +86,10 @@ export const NewerPostDate = styled.span`
 
 export const NewerPostTitle = styled.h2`
   font-size: 2rem;
+
+  @media (max-width: 420px) {
+    font-size: 1.75rem;
+  }
 `;
 
 export const NewerPostDescription = styled.p`
