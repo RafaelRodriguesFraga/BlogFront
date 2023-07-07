@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
   gap: 1rem;
   padding: 30px;
 `;
