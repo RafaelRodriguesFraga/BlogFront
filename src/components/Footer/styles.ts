@@ -1,4 +1,4 @@
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitch, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -8,13 +8,34 @@ export const FooterContainer = styled.footer`
   align-items: center;
   flex-direction: column;
   padding: 2rem;
-
   margin-top: 5rem;  
-
   color: #fff;
 `;
 
-export const FooterText = styled.p``;
+export const FootTextContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+
+  @media (max-width: 355px) {
+    flex-direction: column;
+  }
+`
+
+export const FooterText = styled.span`
+  text-align: center;
+
+  @media (max-width: 352px) {
+    font-size: 1rem;
+  }
+`;
+
+export const Dash = styled.span`
+  @media (max-width: 355px) {
+    display: none;
+  }
+`;
 
 export const SocialIconsContainer = styled.div`
   display: flex;
@@ -22,6 +43,11 @@ export const SocialIconsContainer = styled.div`
   align-items: center;
   gap: 2rem;
   margin-top: 20px;
+  font-size: 22px;
+
+  @media (max-width: 355px) {
+    font-size: 20px;
+  }
 `;
 
 export const SocialIconLink = styled(Link)`

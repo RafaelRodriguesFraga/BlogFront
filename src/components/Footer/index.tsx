@@ -4,16 +4,20 @@ import * as S from "./styles";
 const Footer = () => {
   return (
     <S.FooterContainer>
-      <p>Copyright (c) 2023 - Rafael Rodrigues Fraga</p>
+      <S.FootTextContainer>
+        <S.FooterText>Copyright (c) 2023</S.FooterText>       
+        <S.Dash>-</S.Dash>
+        <S.FooterText>Rafael Rodrigues Fraga</S.FooterText>
+      </S.FootTextContainer>
       <S.SocialIconsContainer>
         <S.SocialIconLink to="#">
-          <FaFacebook  size={22}/>
+          <FaFacebook />
         </S.SocialIconLink>
         <S.SocialIconLink to="#">
-          <FaTwitter size={22} />
+          <FaTwitter />
         </S.SocialIconLink>
         <S.SocialIconLink to="#">
-          <FaInstagram size={22} />
+          <FaInstagram  />
         </S.SocialIconLink>
       </S.SocialIconsContainer>
     </S.FooterContainer>
