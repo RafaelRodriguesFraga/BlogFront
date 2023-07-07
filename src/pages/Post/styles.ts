@@ -63,6 +63,7 @@ export const PostImage = styled.img`
 
 export const PostTextContainer = styled.div`
   margin-top: 1.5rem;
+  
 `;
 
 export const PostText = styled.p`
@@ -70,4 +71,9 @@ export const PostText = styled.p`
   font-size: 1.25rem;
   font-family: "Source Serif 4", serif;
   text-align: justify;
+
+  @media (max-width: 420px){
+    text-align: start;
+
+  }
 `;
