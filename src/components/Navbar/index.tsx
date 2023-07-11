@@ -1,36 +1,43 @@
 import React, { useState } from "react";
-import * as S from  "./styles";
+import * as S from "./styles";
 import { Link } from "react-router-dom";
+import { FaBars, FaHamburger } from "react-icons/fa";
 
-const Navbar = () => {
-  const [menuActive, setMenuActive] = useState(false);
+type NavbarProps = {
+  setVisible: (visible: boolean) => void
+}
 
-  const toggleMenu = () => {
-    setMenuActive(!menuActive);
-  };
-
+const Navbar = ({setVisible}: NavbarProps) => {
+  
   return (
     <S.NavbarContainer>
-      <S.LogoLink to="/">My Blog</S.LogoLink>
+      <S.Navbar>
+        <S.LogoContainer>
+          <S.Logo>Logo</S.Logo>
+        </S.LogoContainer>
 
-      <S.HamburgerButton onClick={toggleMenu}>
-        {menuActive ? <S.CloseIcon /> : <S.HamburgerIcon/>  }
-      </S.HamburgerButton>
+          <S.NavList>
+            <S.NavItem>
+              <S.NavLink to="/">Back-End</S.NavLink>
+            </S.NavItem>
 
-      <S.NavbarList>
-        <S.NavbarItem>
-            <S.NavbarLink to="/">Back-End</S.NavbarLink>
-        </S.NavbarItem>
-        <S.NavbarItem>
-            <S.NavbarLink to="/">Front-End</S.NavbarLink>
-        </S.NavbarItem>
-        <S.NavbarItem>
-            <S.NavbarLink to="/">Mobile</S.NavbarLink>
-        </S.NavbarItem>
-        </S.NavbarList>
+            <S.NavItem>
+              <S.NavLink to="/">Front-End</S.NavLink>
+            </S.NavItem>
 
-        {/* <S.SearchInput type="text" placeholder="Search"/> */}
+            <S.NavItem>
+              <S.NavLink to="/">Mobile</S.NavLink>
+            </S.NavItem>
+          </S.NavList>
 
+        <S.SearchContainer>
+          <S.SearchInput type="search" />
+        </S.SearchContainer>
+
+        <S.HamburgerIconContainer >
+          <FaBars size={26} onClick={() => setVisible(true)}/>
+        </S.HamburgerIconContainer>
+      </S.Navbar>
     </S.NavbarContainer>
   );
 };
