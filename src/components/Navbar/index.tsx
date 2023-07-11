@@ -31,7 +31,7 @@ const Navbar = ({setVisible}: NavbarProps) => {
           </S.NavList>
 
         <S.SearchContainer>
-          <S.SearchInput type="search" />
+          <S.SearchInput type="search" placeholder="Pesquisar..."/>
         </S.SearchContainer>
 
         <S.HamburgerIconContainer >

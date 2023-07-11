@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { FaBars, FaTimes } from "react-icons/fa";
 
 export const NavbarContainer = styled.header`
-  background-color: #000;
+
 `;
 
 export const Navbar = styled.nav`
@@ -54,6 +53,11 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input`
   border-radius: 10px;
   height: 1.75rem;
+
+  ::placeholder {
+    padding-left: 10px;
+  }
+ 
 `;
 
 export const HamburgerIconContainer = styled.div`
