@@ -66,5 +66,6 @@ export const HamburgerIconContainer = styled.div`
   @media (max-width: 768px) {
     display: flex;
     align-items: center;
+    cursor: pointer;
   }
 `;

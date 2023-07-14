@@ -41,13 +41,9 @@ export const Container = styled.div<ContainerProps>`
 
       > svg {
         transform: rotate(0deg);
+        cursor: pointer;
       }
     `}
-`;
-
-export const Teste = styled.div`
-  display: flex;
-  flex-direction: column;
 `;
 
 export const Navbar = styled.nav``;
