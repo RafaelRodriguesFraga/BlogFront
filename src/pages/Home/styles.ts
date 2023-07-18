@@ -99,14 +99,19 @@ export const NewerPostDescription = styled.p`
 
 export const PostContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 3.75rem;
   gap: 2rem;
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 300px) {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  @media (max-width: 617px) {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 618px) and (max-width: 926px) {
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 2rem;
   }
 `;
