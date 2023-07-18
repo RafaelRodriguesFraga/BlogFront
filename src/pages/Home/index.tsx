@@ -14,7 +14,7 @@ type CreatePostProps = {
 };
 
 let page = 1;
-let quantityPerPage = 9;
+let quantityPerPage = 6;
 
 const Home = () => {
   const [posts, setPosts] = useState<PostPaginated>();
