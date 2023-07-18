@@ -6,19 +6,24 @@ interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (pageNumber: number) => void;
+  fetchMorePosts: (index: number) => void;
 }
 
 const Pagination = ({
   currentPage,
   totalPages,
   onPageChange,
+  fetchMorePosts,
 }: PaginationProps) => {
+  
   const handlePreviousClick = () => {
     onPageChange(currentPage <= 1 ? 1 : currentPage - 1);
+    fetchMorePosts(currentPage - 1);
   };
 
   const handleNextClick = () => {
     onPageChange(currentPage > totalPages ? totalPages : currentPage + 1);
+    fetchMorePosts(currentPage + 1);
   };
 
   return (
