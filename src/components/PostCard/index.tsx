@@ -1,9 +1,13 @@
+import Post from "../../interfaces/Post";
 import * as S from "./styles";
 
-const PostListItem = () => {
+type PostCardProps = {
+  post: Post;
+};
+const PostCard = ({post}: PostCardProps) => {
   return (
     <S.PostCard>
-      <S.PostImage src="https://wallpapercave.com/wp/wp1940992.jpg" alt="Post Image" />
+      <S.PostImage src={post.thumbnail} alt="Post Image" />
 
       <S.PostInfoContainer>
         <S.PostInfo>
@@ -21,4 +25,4 @@ const PostListItem = () => {
   );
 };
 
-export default PostListItem;
+export default PostCard;
