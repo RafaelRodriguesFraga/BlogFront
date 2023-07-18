@@ -14,8 +14,9 @@ export const PostCard = styled.div`
 `;
 
 export const PostImage = styled.img`
-  width: 100%;
-
+   width: 100%; 
+   aspect-ratio: 16/9;
+ 
 `;
 
 export const PostInfoContainer = styled.div`
@@ -63,7 +64,6 @@ export const PostDescription = styled.p`
   margin-bottom: 1rem;
   opacity: 0.6;
 `;
-
 
 export const NewerPostContainer = styled.div`
   display: grid;
