@@ -4,20 +4,15 @@ import PostCard from "../../components/PostCard";
 import Pagination from "../../components/Pagination";
 import PostPaginated from "../../interfaces/PostPaginated";
 import { getAll } from "../../services/post.service";
-
-type CreatePostProps = {
-  title: string;
-  thumbnail: string;
-  content: string;
-  meta: string;
-  tags: any;
-};
+import { format } from "date-fns";
+import Post from "../../interfaces/Post";
 
 let page = 1;
-let quantityPerPage = 6;
+let quantityPerPage = 10;
 
 const Home = () => {
-  const [posts, setPosts] = useState<PostPaginated>();
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [featuredPost, setFeaturedPost] = useState<Post>();
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
 
@@ -28,8 +23,13 @@ const Home = () => {
   const fetchPosts = async () => {
     try {
       const response = await getAll(page, quantityPerPage);
-      setPosts(response.data);
-      setTotalPages(response.data.totalPages);
+
+      const { totalPages } = response.data;
+      const { data } = response.data;
+
+      setFeaturedPost(data[0]);
+      setPosts(data);
+      setTotalPages(totalPages);
     } catch (error) {
       console.log(error);
     }
@@ -46,31 +46,9 @@ const Home = () => {
 
   return (
     <S.Container>
-      <S.NewerPostContainer>
-        <S.ImageContainer>
-          <S.NewerPostImage
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCNhaL-D3aveZLCYzmSqDqkgNb1NIj0IKyzQ&usqp=CAU"
-            alt="Post Image"
-          />
-        </S.ImageContainer>
-
-        <S.NewerPostContent>
-          <S.NewerPostInfo>
-            <S.NewerPostTag>Front-End</S.NewerPostTag>
-            <S.DotBullet>&bull;</S.DotBullet>
-            <S.NewerPostDate>25/03/2022</S.NewerPostDate>
-          </S.NewerPostInfo>
-
-          <S.NewerPostTitle>Como criar classes ricas com C#</S.NewerPostTitle>
-          <S.NewerPostDescription>
-            Pra criar classes ricas é necessario saber...
-          </S.NewerPostDescription>
-        </S.NewerPostContent>
-      </S.NewerPostContainer>
-
       <S.PostContainer>
         {posts &&
-          posts.data.map((post) => {
+          posts.map((post) => {
             return <PostCard key={post.id} post={post} />;
           })}
       </S.PostContainer>
