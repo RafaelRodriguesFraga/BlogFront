@@ -12,6 +12,7 @@ export const PostContent = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const Title = styled.span`
@@ -49,7 +50,7 @@ export const PostDate = styled.span`
 
 export const ImageContainer = styled.div`
   display: flex;
-  width: 100%;
+  width: 95%;
   margin-top: 2.5rem;
   justify-content: center;
   align-items: center;
@@ -58,22 +59,26 @@ export const ImageContainer = styled.div`
 export const PostImage = styled.img`
   width: 100%;
   object-fit: cover;
-  max-width: 768px;
+
 `;
 
 export const PostTextContainer = styled.div`
   margin-top: 1.5rem;
-  
+  max-width: 680px;
+  font-size: 1.25rem;
 `;
 
 export const PostText = styled.p`
-  max-width: 768px;
-  font-size: 1.25rem;
+  margin-top: 10px;
+  font-size: 1.25rem; 
   font-family: "Source Serif 4", serif;
-  text-align: justify;
+  text-align: start;
+  letter-spacing: 2px;
 
   @media (max-width: 420px){
     text-align: start;
-
+    
   }
 `;
+
+
