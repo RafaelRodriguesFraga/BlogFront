@@ -1,4 +1,9 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+export const PostLink = styled(Link)`
+    text-decoration: none;
+`;
 
 export const PostCard = styled.div`
   border: 1px solid;
@@ -33,7 +38,7 @@ export const PostContent = styled.div``;
 export const PostTag = styled.span`
   font-size: 1.2rem;
   color: #fff;
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
   opacity: 0.6;
 `;
 
@@ -49,7 +54,7 @@ export const PostDate = styled.span`
   font-size: 1.2rem;
   color: #fff;
   opacity: 0.6;
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
 `;
 
 export const PostTitle = styled.h2`
