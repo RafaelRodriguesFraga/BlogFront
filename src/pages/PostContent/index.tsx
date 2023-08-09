@@ -27,7 +27,7 @@ const PostContent = () => {
       <S.PostContent>
         <S.Title>{post.title}</S.Title>
         <S.PostInfo>
-          <S.PostTag> {post.tags && post.tags.join(", ")}</S.PostTag>
+          <S.PostTag> {post.tag}</S.PostTag>
           <S.Bullet>&bull;</S.Bullet>
           <S.PostDate>{post.createdAt}</S.PostDate>
         </S.PostInfo>

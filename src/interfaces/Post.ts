@@ -3,7 +3,7 @@ interface Post {
     title: string;
     content: string;
     meta: string;
-    tags: [string];
+    tag: string;
     slug: string;
     thumbnail: string;     
     createdAt: string;

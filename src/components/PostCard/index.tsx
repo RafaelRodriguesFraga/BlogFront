@@ -15,7 +15,7 @@ const PostCard = ({ post }: PostCardProps) => {
 
           <S.PostInfoContainer>
             <S.PostInfo>
-              <S.PostTag>{post.tags.join(", ")}</S.PostTag>
+              <S.PostTag>{post.tag}</S.PostTag>
               <S.Bullet>&bull;</S.Bullet>
               <S.PostDate>
                 {format(new Date(post.createdAt), "dd/MM/yyyy")}
