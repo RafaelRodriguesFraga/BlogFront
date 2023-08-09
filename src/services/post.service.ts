@@ -11,7 +11,22 @@ export const getAll = async (page: number, quantityPerPage: number) => {
     if (response.data) {
       return response.data;
     }
+    return error;
+  }
+};
 
+export const getBySlug = async (slug: string) => {
+  try {
+    const endpoint = `post/${slug}`;
+
+    const response = await axiosGet(endpoint);
+
+    return response;
+  } catch (error: any) {
+    const { response } = error;
+    if (response.data) {
+      return response.data;
+    }
     return error;
   }
 };
