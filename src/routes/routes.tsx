@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MenuMobile from "../components/MenuMobile";
 import { useState } from "react";
+import FilteredPost from "../pages/FilteredPost";
 
 export const Routes = () => {
   const [menuVisible, setMenuVisible] = useState(false)
@@ -21,6 +22,7 @@ export const Routes = () => {
       <AppRoutes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:slug" element={<PostContent />} />
+        <Route path="/posts/:tag" element={<FilteredPost />} />
       </AppRoutes>
       <Footer />
     </Router>
