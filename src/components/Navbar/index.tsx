@@ -18,15 +18,15 @@ const Navbar = ({setVisible}: NavbarProps) => {
 
           <S.NavList>
             <S.NavItem>
-              <S.NavLink to="/">Back-End</S.NavLink>
+              <S.NavLink to="/posts/backend">Back-End</S.NavLink>
             </S.NavItem>
 
             <S.NavItem>
-              <S.NavLink to="/">Front-End</S.NavLink>
+              <S.NavLink to="/posts/frontend">Front-End</S.NavLink>
             </S.NavItem>
 
             <S.NavItem>
-              <S.NavLink to="/">Mobile</S.NavLink>
+              <S.NavLink to="/posts/mobile">Mobile</S.NavLink>
             </S.NavItem>
           </S.NavList>
 
