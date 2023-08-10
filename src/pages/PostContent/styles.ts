@@ -5,6 +5,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
+ 
 `;
 
 export const PostContent = styled.div`
@@ -65,6 +66,7 @@ export const PostImage = styled.img`
 export const PostTextContainer = styled.div`
   margin-top: 1.5rem;
   max-width: 680px;
+  width: 100%;
   font-size: 1.25rem;
 `;
 
