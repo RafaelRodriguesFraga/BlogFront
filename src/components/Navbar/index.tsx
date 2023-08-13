@@ -1,41 +1,36 @@
-import React, { useState } from "react";
+import React, { KeyboardEventHandler, useState } from "react";
 import * as S from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaHamburger } from "react-icons/fa";
+import { searchByTitleAsync } from "../../services/post.service";
+import Post from "../../interfaces/Post";
+import SearchResult from "../../pages/SearchResult";
+import SearchForm from "../SearchForm";
 
 type NavbarProps = {
-  setVisible: (visible: boolean) => void
-}
+  setVisible: (visible: boolean) => void;
+};
 
-const Navbar = ({setVisible}: NavbarProps) => {
-  
+const Navbar = ({ setVisible }: NavbarProps) => {
   return (
     <S.NavbarContainer>
       <S.Navbar>
-        <S.LogoContainer>
-          <S.Logo>Logo</S.Logo>
-        </S.LogoContainer>
+        <S.NavList>
+          <S.NavItem>
+            <S.NavLink to="/posts/backend">Back-End</S.NavLink>
+          </S.NavItem>
 
-          <S.NavList>
-            <S.NavItem>
-              <S.NavLink to="/posts/backend">Back-End</S.NavLink>
-            </S.NavItem>
+          <S.NavItem>
+            <S.NavLink to="/posts/frontend">Front-End</S.NavLink>
+          </S.NavItem>
 
-            <S.NavItem>
-              <S.NavLink to="/posts/frontend">Front-End</S.NavLink>
-            </S.NavItem>
+          <S.NavItem>
+            <S.NavLink to="/posts/mobile">Mobile</S.NavLink>
+          </S.NavItem>
+        </S.NavList>
 
-            <S.NavItem>
-              <S.NavLink to="/posts/mobile">Mobile</S.NavLink>
-            </S.NavItem>
-          </S.NavList>
-
-        <S.SearchContainer>
-          <S.SearchInput type="search" placeholder="Pesquisar..."/>
-        </S.SearchContainer>
-
-        <S.HamburgerIconContainer >
-          <FaBars size={26} onClick={() => setVisible(true)}/>
+        <S.HamburgerIconContainer>
+          <FaBars size={26} onClick={() => setVisible(true)} />
         </S.HamburgerIconContainer>
       </S.Navbar>
     </S.NavbarContainer>
