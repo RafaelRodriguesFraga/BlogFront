@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavbarContainer = styled.header`
-
+  
 `;
 
 export const Navbar = styled.nav`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  
 `;
 
 export const LogoContainer = styled.div`
@@ -36,7 +38,8 @@ export const NavItem = styled.li``;
 export const NavLink = styled(Link)`
   color: #fff;
   text-decoration: none;
-  font-size: 1.15rem;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
 `;
 
 export const SearchContainer = styled.div`
@@ -53,11 +56,8 @@ export const SearchContainer = styled.div`
 export const SearchInput = styled.input`
   border-radius: 10px;
   height: 1.75rem;
-
-  ::placeholder {
-    padding-left: 10px;
-  }
- 
+  padding: 10px;
+  outline: none ;
 `;
 
 export const HamburgerIconContainer = styled.div`
