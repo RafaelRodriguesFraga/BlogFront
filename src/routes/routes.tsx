@@ -10,17 +10,17 @@ import Footer from "../components/Footer";
 import MenuMobile from "../components/MenuMobile";
 import { useState } from "react";
 import FilteredPost from "../pages/FilteredPost";
+import Post from "../interfaces/Post";
 
 export const Routes = () => {
-  const [menuVisible, setMenuVisible] = useState(false)
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [searchResults, setSearchResults] = useState<Post[]>([]);
+  
 
   return (
-    <Router>
-      <Navbar setVisible={setMenuVisible}/>
-      <MenuMobile visible={menuVisible} setVisible={setMenuVisible} />
-
+    <Router>     
       <AppRoutes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home  searchResults={searchResults}/>} />
         <Route path="/post/:slug" element={<PostContent />} />
         <Route path="/posts/:tag" element={<FilteredPost />} />
       </AppRoutes>
