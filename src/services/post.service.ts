@@ -15,7 +15,11 @@ export const getAll = async (page: number, quantityPerPage: number) => {
   }
 };
 
-export const getAllByTag = async (page: number, quantityPerPage: number, tag: string) => {
+export const getAllByTag = async (
+  page: number,
+  quantityPerPage: number,
+  tag: string
+) => {
   try {
     const endpoint = `post/tag/${tag}?currentPage=${page}&quantityPerPage=${quantityPerPage}`;
 
@@ -47,4 +51,18 @@ export const getBySlug = async (slug: string) => {
   }
 };
 
+export const searchByTitleAsync = async (title: string) => {
+  try {
+    const endpoint = `post/search?title=${title}`;
+    
+    const response = await axiosGet(endpoint);
 
+    return response;
+  } catch (error: any) {
+    const { response } = error;
+    if (response.data) {
+      return response.data;
+    }
+    return error;
+  }
+};
