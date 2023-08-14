@@ -19,7 +19,7 @@ const Home = ({ searchResults }: HomeProps) => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const title = queryParams.get("title");
-  console.log(title);
+
   const [posts, setPosts] = useState<Post[]>([]);
   const [featuredPost, setFeaturedPost] = useState<Post>();
   const [currentPage, setCurrentPage] = useState(1);

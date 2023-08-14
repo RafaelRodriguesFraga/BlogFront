@@ -13,9 +13,6 @@ let quantityPerPage = 10;
 
 const FilteredPost = () => {
   const {tag} = useParams();
-
-  console.log(tag);
-
   const [posts, setPosts] = useState<Post[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
