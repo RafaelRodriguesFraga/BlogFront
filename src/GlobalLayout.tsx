@@ -4,11 +4,9 @@ import { searchByTitleAsync } from "./services/post.service";
 import Navbar from "./components/Navbar";
 import MenuMobile from "./components/MenuMobile";
 import SearchForm from "./components/SearchForm";
-import { Routes } from "./routes/routes";
 import "./GlobalLayout.css";
 
 import {
-  BrowserRouter as Router,
   Route,
   Routes as AppRoutes,
   Link,

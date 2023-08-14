@@ -13,3 +13,7 @@ export const PaginationButton = styled.button`
   border: none;
   cursor: pointer;
 `;
+
+export const PaginationText = styled.span`
+   letter-spacing: 1px;
+`;

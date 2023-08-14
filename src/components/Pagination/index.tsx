@@ -33,9 +33,9 @@ const Pagination = ({
           <FaAngleLeft size={18} color="#e9e9ed" />
         </S.PaginationButton>
       )}
-      <span>
+      <S.PaginationText>
         Página {currentPage} de {totalPages}
-      </span>
+      </S.PaginationText>
 
       {currentPage < totalPages && (
         <S.PaginationButton onClick={handleNextClick}>

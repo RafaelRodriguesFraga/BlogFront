@@ -1,4 +1,3 @@
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitch, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -25,6 +24,7 @@ export const FootTextContainer = styled.div`
 
 export const FooterText = styled.span`
   text-align: center;
+   letter-spacing: 1px;
 
   @media (max-width: 352px) {
     font-size: 1rem;
@@ -32,6 +32,7 @@ export const FooterText = styled.span`
 `;
 
 export const Dash = styled.span`
+ letter-spacing: 1px;
   @media (max-width: 355px) {
     display: none;
   }
