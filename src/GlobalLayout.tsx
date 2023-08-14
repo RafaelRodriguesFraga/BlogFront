@@ -41,12 +41,10 @@ const GlobalLayout = () => {
   return (
     <>
       <div className="navbar-container">
-        <div className="logo-container">
-          <Link to="/" className="logo-link">
-            <h1>Logo</h1>
-          </Link>
-        </div>
-
+        <Link to="/" className="logo-container">
+          <span className="logo-initials">RF</span>
+          <h1 className="logo-name">Rafael Fraga Blog</h1>
+        </Link>
         <Navbar setVisible={setMenuVisible} />
         <MenuMobile visible={menuVisible} setVisible={setMenuVisible} />
 
