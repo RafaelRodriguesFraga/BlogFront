@@ -59,8 +59,8 @@ const GlobalLayout = () => {
             element={<SearchResult posts={searchResults} />}
           />
         </AppRoutes>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };
