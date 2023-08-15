@@ -16,17 +16,17 @@ const MenuMobile = ({ visible, setVisible }: MenuMobileProps) => {
     <S.Container visible={visible}>
       <FaTimes size={30} onClick={() => setVisible(false)} />
       <S.Navbar>
-        <S.NavList>
+      <S.NavList>
           <S.NavItem>
-            <S.NavLink to="/">Back-End</S.NavLink>
+            <S.NavLink to="/posts/backend" onClick={() => setVisible(false)}>Back-End</S.NavLink>
           </S.NavItem>
 
           <S.NavItem>
-            <S.NavLink to="/">Front-End</S.NavLink>
+            <S.NavLink to="/posts/frontend" onClick={() => setVisible(false)}>Front-End</S.NavLink>
           </S.NavItem>
 
           <S.NavItem>
-            <S.NavLink to="/">Mobile</S.NavLink>
+            <S.NavLink to="/posts/mobile" onClick={() => setVisible(false)}>Mobile</S.NavLink>
           </S.NavItem>
         </S.NavList>
       </S.Navbar>

@@ -18,11 +18,11 @@ export const Container = styled.div<ContainerProps>`
   right: 0;
   bottom: 0;
   z-index: 5;
-  background: #6b7a8c;
+  background: #00000095;
   opacity: 0;
   pointer-events: none;
   transform: translateY(50px);
-  transition: 0.5s;
+  transition: 0.3s;
 
   > svg {
     position: absolute;
