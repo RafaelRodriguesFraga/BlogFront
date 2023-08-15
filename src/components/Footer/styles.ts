@@ -51,9 +51,10 @@ export const SocialIconsContainer = styled.div`
   }
 `;
 
-export const SocialIconLink = styled(Link)`
+export const SocialIconLink = styled.a`
     color: #FFF;
     transition: all 0.4s ease-in-out;
+  
 
   &:hover {
     transform: translateY(-4px);
