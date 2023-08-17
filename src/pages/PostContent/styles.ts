@@ -67,14 +67,12 @@ export const PostTextContainer = styled.div`
   margin-top: 1.5rem;
   max-width: 680px;
   width: 100%;
-  font-size: 1.25rem;
 `;
 
 export const PostText = styled.p`
   margin-top: 10px;
   font-size: 1.25rem; 
   font-family: "Source Serif 4", serif;
-  text-align: start;
   letter-spacing: 2px;
 
   @media (max-width: 420px){
