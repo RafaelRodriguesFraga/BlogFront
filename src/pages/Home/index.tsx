@@ -9,7 +9,7 @@ import SearchResult from "../SearchResult";
 import PostCardLoading from "../../components/Shimmer/PostCardLoading";
 
 let page = 1;
-let quantityPerPage = 10;
+let quantityPerPage = 9;
 
 type HomeProps = {
   searchResults: Post[];
