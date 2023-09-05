@@ -7,6 +7,7 @@ import { getAll, getAllByTag } from "../../services/post.service";
 import { format } from "date-fns";
 import Post from "../../interfaces/Post";
 import { useParams } from "react-router-dom";
+import PostCardLoading from "../../components/Shimmer/PostCardLoading";
 
 let page = 1;
 let quantityPerPage = 10;
@@ -16,6 +17,8 @@ const FilteredPost = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -23,6 +26,7 @@ const FilteredPost = () => {
 
   const fetchPosts = async () => {
     try {
+      setIsLoading(true)
       const response = await getAllByTag(page, quantityPerPage, tag as string);
 
       const { totalPages } = response.data;
@@ -30,6 +34,7 @@ const FilteredPost = () => {
  
       setPosts(data);
       setTotalPages(totalPages);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -49,7 +54,7 @@ const FilteredPost = () => {
       <S.PostContainer>
         {posts &&
           posts.map((post) => {
-            return <PostCard key={post.id} post={post} />;
+            return isLoading ? <PostCardLoading key={post.id} /> : <PostCard key={post.id} post={post} />;
           })}
       </S.PostContainer>
 
