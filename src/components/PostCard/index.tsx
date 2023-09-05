@@ -18,7 +18,7 @@ const PostCard = ({ post }: PostCardProps) => {
               <S.PostTag>{post.tag}</S.PostTag>
               <S.Bullet>&bull;</S.Bullet>
               <S.PostDate>
-                {format(new Date(post.createdAt), "dd/MM/yyyy")}
+              {post.createdAt}
               </S.PostDate>
             </S.PostInfo>
 
