@@ -81,4 +81,6 @@ export const PostText = styled.p`
   }
 `;
 
-
+export const ShareContainer = styled.div`
+  margin-top: 20px;
+`;

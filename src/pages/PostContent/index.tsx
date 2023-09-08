@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import * as S from "./styles";
-import "./styles.css"
+import "./styles.css";
 import { getBySlug } from "../../services/post.service";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Post from "../../interfaces/Post";
+import SocialShareButton from "../../components/SocialShareButton";
 
 const PostContent = () => {
   const { slug } = useParams();
+  const shareUrl = window.location.href;
+
   const [post, setPost] = useState<Post>({} as Post);
 
-
   const getPost = async () => {
-    var response = await getBySlug(slug ? slug : "");
+    var response = await getBySlug(slug as string);
     var { data } = response.data;
-    console.log(data);
     setPost(data);
   };
-
 
   useEffect(() => {
     getPost();
@@ -37,12 +37,13 @@ const PostContent = () => {
         </S.ImageContainer>
 
         <S.PostTextContainer>
-          <S.PostText dangerouslySetInnerHTML={{__html: post.content}}>
-           
-          </S.PostText>
+          <S.PostText dangerouslySetInnerHTML={{ __html: post.content }} />
+
+          <S.ShareContainer>
+            <h2>Compartilhe esse post</h2>
+            <SocialShareButton url={shareUrl}/>
+          </S.ShareContainer>
         </S.PostTextContainer>
-          
-        
       </S.PostContent>
     </S.Container>
   );
