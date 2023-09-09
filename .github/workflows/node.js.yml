@@ -12,6 +12,7 @@ jobs:
 
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REACT_APP_API_URL: https://blog-api-prd.azurewebsites.net/api/
 
 
     steps:
