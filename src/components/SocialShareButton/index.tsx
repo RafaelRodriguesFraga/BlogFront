@@ -2,9 +2,31 @@ import React, { ReactNode } from "react";
 import { FaFacebook, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import * as S from "./styles";
 import { IconType } from "react-icons/lib";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  HatenaShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton
+} from "react-share";
 
 type SocialShareButtonProps = {
   url: string;
+  title: string;
 };
 
 type SocialShareProvider = {
@@ -35,10 +57,25 @@ const socialShareMap: Record<string, SocialShareProvider> = {
   },
 };
 
-const SocialShareButton = ({ url }: SocialShareButtonProps) => {
+const SocialShareButton = ({ url, title }: SocialShareButtonProps) => {
   return (
     <S.SocialIconsContainer>
-      <S.List>
+      <S.FacebookShare url={url} quote={title}>
+          <FaFacebook size={30}/>
+      </S.FacebookShare>
+
+      <S.TwitterShare url={url} title={title}>
+          <FaTwitter size={30}/>
+      </S.TwitterShare>
+
+      <S.LinkedinShare url={url} title={title}>
+          <FaLinkedin size={30}/>
+      </S.LinkedinShare>
+
+      <S.WhatsAppShare url={url} title={title}>
+          <FaWhatsapp size={30}/>
+      </S.WhatsAppShare>
+      {/* <S.List>
         {Object.entries(socialShareMap).map(([key, socialShareProvider]) => (
           <S.ListItem key={key}>
             <S.SocialIconLink
@@ -49,7 +86,7 @@ const SocialShareButton = ({ url }: SocialShareButtonProps) => {
             </S.SocialIconLink>
           </S.ListItem>
         ))}
-      </S.List>
+      </S.List> */}
     </S.SocialIconsContainer>
   );
 };
