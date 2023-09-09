@@ -28,7 +28,7 @@ jobs:
       run: yarn install    
 
     - name: Build React App  
-      run: env-cmd yarn build
+      run: yarn build
 
   deploy:
     runs-on: ubuntu-latest  
