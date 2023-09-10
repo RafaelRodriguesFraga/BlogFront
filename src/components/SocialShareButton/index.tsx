@@ -1,11 +1,12 @@
 import React, { ReactNode } from "react";
 import { FaFacebook, FaLinkedin, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import * as S from "./styles";
-import { IconType } from "react-icons/lib";
+import { Helmet } from "react-helmet";
 
 type SocialShareButtonProps = {
   url: string;
   title: string;
+  thumbnail: string;
 };
 
 // type SocialShareProvider = {
@@ -36,23 +37,29 @@ type SocialShareButtonProps = {
 //   },
 // };
 
-const SocialShareButton = ({ url, title }: SocialShareButtonProps) => {
+const SocialShareButton = ({ url, title, thumbnail }: SocialShareButtonProps) => {
   return (
     <S.SocialIconsContainer>
-      <S.FacebookShare url={url} quote={title} title={title}>
-          <FaFacebook size={30}/>
+      <Helmet>
+        <meta property="og:title" content={title} />
+        <meta property="og:image" content={thumbnail} />
+        <meta property="og:url" content={url} />
+      </Helmet>
+
+      <S.FacebookShare url={url} quote={title} title={title} windowWidth={800} windowHeight={600}>
+        <FaFacebook size={30} />
       </S.FacebookShare>
 
-      <S.TwitterShare url={url} title={title}>
-          <FaTwitter size={30}/>
+      <S.TwitterShare url={url} title={title} windowWidth={800} windowHeight={600}>
+        <FaTwitter size={30} />
       </S.TwitterShare>
 
-      <S.LinkedinShare url={url} title={title}>
-          <FaLinkedin size={30}/>
+      <S.LinkedinShare url={url} title={title} windowWidth={800} windowHeight={600}>
+        <FaLinkedin size={30} />
       </S.LinkedinShare>
 
-      <S.WhatsAppShare url={url} title={title}>
-          <FaWhatsapp size={30}/>
+      <S.WhatsAppShare url={url} title={title} windowWidth={800} windowHeight={600}>
+        <FaWhatsapp size={30} />
       </S.WhatsAppShare>
       {/* <S.List>
         {Object.entries(socialShareMap).map(([key, socialShareProvider]) => (

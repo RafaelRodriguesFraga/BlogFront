@@ -41,7 +41,7 @@ const PostContent = () => {
 
           <S.ShareContainer>
             <h2>Compartilhe esse post</h2>
-            <SocialShareButton url={shareUrl} title={post.title}/>
+            <SocialShareButton url={shareUrl} title={post.title} thumbnail={post.thumbnail} />
           </S.ShareContainer>
         </S.PostTextContainer>
       </S.PostContent>
