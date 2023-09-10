@@ -37,28 +37,54 @@ type SocialShareButtonProps = {
 //   },
 // };
 
-const SocialShareButton = ({ url, title, thumbnail }: SocialShareButtonProps) => {
+const SocialShareButton = ({
+  url,
+  title,
+  thumbnail,
+}: SocialShareButtonProps) => {
   return (
     <S.SocialIconsContainer>
       <Helmet>
-        <meta property="og:title" content={title} />
+        <meta name="description" content={title} />
+        <meta property="og:description" content={title} />
         <meta property="og:image" content={thumbnail} />
         <meta property="og:url" content={url} />
       </Helmet>
 
-      <S.FacebookShare url={url} quote={title} title={title} windowWidth={800} windowHeight={600}>
+      <S.FacebookShare
+        url={url}
+        quote={title}
+        title={title}
+        windowWidth={800}
+        windowHeight={600}
+      >
         <FaFacebook size={30} />
       </S.FacebookShare>
 
-      <S.TwitterShare url={url} title={title} windowWidth={800} windowHeight={600}>
+      <S.TwitterShare
+        url={url}
+        title={title}
+        windowWidth={800}
+        windowHeight={600}
+      >
         <FaTwitter size={30} />
       </S.TwitterShare>
 
-      <S.LinkedinShare url={url} title={title} windowWidth={800} windowHeight={600}>
+      <S.LinkedinShare
+        url={url}
+        title={title}
+        windowWidth={800}
+        windowHeight={600}
+      >
         <FaLinkedin size={30} />
       </S.LinkedinShare>
 
-      <S.WhatsAppShare url={url} title={title} windowWidth={800} windowHeight={600}>
+      <S.WhatsAppShare
+        url={url}
+        title={title}
+        windowWidth={800}
+        windowHeight={600}
+      >
         <FaWhatsapp size={30} />
       </S.WhatsAppShare>
       {/* <S.List>
