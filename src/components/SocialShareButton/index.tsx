@@ -49,6 +49,9 @@ const SocialShareButton = ({
         <meta property="og:description" content={title} />
         <meta property="og:image" content={thumbnail} />
         <meta property="og:url" content={url} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={title} />
+        <meta name="twitter:image" content={thumbnail} />
       </Helmet>
 
       <S.FacebookShare
