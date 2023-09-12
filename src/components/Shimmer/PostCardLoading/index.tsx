@@ -6,7 +6,7 @@ import Skeleton from "../../Skeleton";
 const PostCardLoading = () => {
   return (
     <S.PostCard>     
-        <Skeleton type="image" />
+        <Skeleton type="image" width="100%"/>
 
         <S.PostInfoContainer>
           <S.PostInfo>

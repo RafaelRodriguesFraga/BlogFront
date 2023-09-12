@@ -2,14 +2,15 @@ import styled, { css, keyframes } from "styled-components";
 import { SkeletonProps } from ".";
 
 
-export const ImageStyle = css`
-  width: 100%;
+export const ImageStyle = css<SkeletonProps>`
+  width: ${props => props.width};
   aspect-ratio: 16/9;
+  margin-top: ${props => props.marginTop};
 
 `;
 
-export const InfoStyle = css`
-  width: 100%;
+export const InfoStyle = css<SkeletonProps>`
+  width: ${props => props.width};
   height: 10px;
   border: 1px solid;
   margin-top: 0.625rem;
@@ -32,6 +33,13 @@ export const MetaStyle = css`
   border-radius: 50px;
 `;
 
+export const Content = css<SkeletonProps>`
+  width: ${props => props.width};
+  height: 10px;
+  margin-top: ${props => props.marginTop};
+`
+
+
 const getSkeletonStyle = (type: string) => {
   switch (type) {
     case "image":
@@ -42,6 +50,9 @@ const getSkeletonStyle = (type: string) => {
       return TitleStyle;
     case "meta":
       return MetaStyle;
+    case "content":
+      return Content;  
+
   }
 };
 
