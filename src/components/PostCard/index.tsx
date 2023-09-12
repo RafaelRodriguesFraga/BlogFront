@@ -9,26 +9,26 @@ type PostCardProps = {
 
 const PostCard = ({ post }: PostCardProps) => {
   return (
-      <S.PostCard>
-        <S.PostLink to={`/post/${post.slug}`}>
-          <S.PostImage src={post.thumbnail} alt="Post Image" />
+    <S.PostCard>
+      <S.PostLink to={`/post/${post.slug}`}>
+        <S.PostImage src={post.thumbnail} alt="Post Image" />
 
-          <S.PostInfoContainer>
-            <S.PostInfo>
-              <S.PostTag>{post.tag}</S.PostTag>
-              <S.Bullet>&bull;</S.Bullet>
-              <S.PostDate>
-              {post.createdAt}
-              </S.PostDate>
-            </S.PostInfo>
+        <S.PostInfoContainer>
+          <S.PostInfo>
+            <S.PostTag>{post.tag}</S.PostTag>
+            <S.Bullet>&bull;</S.Bullet>
+            <S.PostDate>
+              {new Date(post.createdAt).toLocaleDateString()}
+            </S.PostDate>
+          </S.PostInfo>
 
-            <S.PostContent>
-              <S.PostTitle>{post.title}</S.PostTitle>
-              <S.PostDescription>{post.meta}</S.PostDescription>
-            </S.PostContent>
-          </S.PostInfoContainer>
-        </S.PostLink>
-      </S.PostCard>
+          <S.PostContent>
+            <S.PostTitle>{post.title}</S.PostTitle>
+            <S.PostDescription>{post.meta}</S.PostDescription>
+          </S.PostContent>
+        </S.PostInfoContainer>
+      </S.PostLink>
+    </S.PostCard>
   );
 };
 

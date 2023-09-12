@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import Post from "../../interfaces/Post";
 import SocialShareButton from "../../components/SocialShareButton";
 import PostContentLoading from "../../components/Shimmer/PostContentLoading";
+import { format } from "date-fns";
 
 const PostContent = () => {
   const { slug } = useParams();
@@ -18,8 +19,9 @@ const PostContent = () => {
     setIsLoading(true);
     var response = await getBySlug(slug as string);
     var { data } = response.data;
+    console.log(data.createdAt);
     setPost(data);
-    setIsLoading(false)
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -36,7 +38,10 @@ const PostContent = () => {
           <S.PostInfo>
             <S.PostTag> {post.tag}</S.PostTag>
             <S.Bullet>&bull;</S.Bullet>
-            <S.PostDate>{post.createdAt}</S.PostDate>
+            <S.PostDate>   
+              {new Date(post.createdAt).toLocaleDateString()}      
+              {/* {format(new Date(post.createdAt), "dd/MM/yyyy")} */}
+            </S.PostDate>
           </S.PostInfo>
 
           <S.ImageContainer>
