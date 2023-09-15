@@ -8,7 +8,6 @@ import { useLocation } from "react-router-dom";
 import SearchResult from "../SearchResult";
 import PostCardLoading from "../../components/Shimmer/PostCardLoading";
 
-let page = 1;
 let quantityPerPage = 9;
 
 type HomeProps = {
@@ -29,7 +28,7 @@ const Home = ({ searchResults }: HomeProps) => {
     setCurrentPage(pageNumber);
   };
 
-  const fetchPosts = async () => {
+  const fetchPosts = async (page: number) => {
     try {
       setIsLoading(true);
       const response = await getAll(page, quantityPerPage);
@@ -37,7 +36,6 @@ const Home = ({ searchResults }: HomeProps) => {
       const { totalPages } = response.data;
       const { data } = response.data;
 
-      setFeaturedPost(data[0]);
       setPosts(data);
       setTotalPages(totalPages);
       setIsLoading(false);
@@ -47,12 +45,11 @@ const Home = ({ searchResults }: HomeProps) => {
   };
 
   useEffect(() => {
-    fetchPosts();
+    fetchPosts(currentPage);
   }, []);
-
-  const fetchMorePosts = (index: number) => {
-    page = index;
-    fetchPosts();
+  
+  const fetchMorePosts = (page: number) => {
+     fetchPosts(page);
   };
 
   return (
