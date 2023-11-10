@@ -51,6 +51,22 @@ export const getBySlug = async (slug: string) => {
   }
 };
 
+export const getRelatedPostsAsync = async (slug: string) => {
+  try {
+    const endpoint = `post/${slug}/related`;
+
+    const response = await axiosGet(endpoint);
+
+    return response;
+  } catch (error: any) {
+    const { response } = error;
+    if (response.data) {
+      return response.data;
+    }
+    return error;
+  }
+}
+
 export const searchByTitleAsync = async (title: string) => {
   try {
     const endpoint = `post/search?title=${title}`;

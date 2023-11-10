@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import * as S from "./styles";
 import "./styles.css";
-import { getBySlug } from "../../services/post.service";
-import { useParams } from "react-router-dom";
+import { getBySlug, getRelatedPostsAsync } from "../../services/post.service";
+import { Link, useParams } from "react-router-dom";
 import Post from "../../interfaces/Post";
 import SocialShareButton from "../../components/SocialShareButton";
 import PostContentLoading from "../../components/Shimmer/PostContentLoading";
-import { format } from "date-fns";
+import PostCard from "../../components/PostCard";
+import RelatedPost from "../../components/RelatedPosts";
 
 const PostContent = () => {
   const { slug } = useParams();
   const shareUrl = window.location.href;
 
   const [post, setPost] = useState<Post>({} as Post);
+  const [relatedPosts, setRelatedPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const getPost = async () => {
@@ -24,9 +26,22 @@ const PostContent = () => {
     setIsLoading(false);
   };
 
+  const getRelatedPosts = async () => {
+    setIsLoading(true);
+    var response = await getRelatedPostsAsync(slug as string);
+    var { data } = response.data;
+    console.log(data);
+    setRelatedPosts(data);
+    setIsLoading(false);
+  };
+
   useEffect(() => {
     getPost();
   }, []);
+
+  useEffect(() => {
+    getRelatedPosts();
+  }, [slug]);
 
   return (
     <S.Container>
@@ -38,9 +53,8 @@ const PostContent = () => {
           <S.PostInfo>
             <S.PostTag> {post.tag}</S.PostTag>
             <S.Bullet>&bull;</S.Bullet>
-            <S.PostDate>   
-              {new Date(post.createdAt).toLocaleDateString()}      
-              {/* {format(new Date(post.createdAt), "dd/MM/yyyy")} */}
+            <S.PostDate>
+              {new Date(post.createdAt).toLocaleDateString()}
             </S.PostDate>
           </S.PostInfo>
 
@@ -59,6 +73,12 @@ const PostContent = () => {
                 thumbnail={post.thumbnail}
               />
             </S.ShareContainer>
+
+            <S.RelatedPosts>
+              {relatedPosts.map((post) => (
+                <RelatedPost post={post} />
+              ))}
+            </S.RelatedPosts>
           </S.PostTextContainer>
         </S.PostContent>
       )}

@@ -11,7 +11,7 @@ const PostCard = ({ post }: PostCardProps) => {
   return (
     <S.PostCard>
       <S.PostLink to={`/post/${post.slug}`}>
-        <S.PostImage src={post.thumbnail} alt="Post Image" />
+        <S.PostImage src={post.thumbnail} alt="Post Image"/>
 
         <S.PostInfoContainer>
           <S.PostInfo>

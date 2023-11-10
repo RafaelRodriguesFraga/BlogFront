@@ -52,7 +52,8 @@ const GlobalLayout = () => {
       <div>
         <AppRoutes>
           <Route path="/" element={<Home searchResults={searchResults} />} />
-          <Route path="/post/:slug" element={<PostContent />} />
+          <Route path="/post/:slug"  element={<PostContent />}  />
+          <Route path="/post/:slug/related"  element={<PostContent />}  />
           <Route path="/posts/:tag" element={<FilteredPost />} />
           <Route
             path="/posts/search"

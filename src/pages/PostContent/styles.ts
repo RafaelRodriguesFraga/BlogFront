@@ -84,3 +84,8 @@ export const PostText = styled.p`
 export const ShareContainer = styled.div`
   margin-top: 20px;
 `;
+
+export const RelatedPosts = styled.div`
+  margin: 40px 0;
+  
+`
